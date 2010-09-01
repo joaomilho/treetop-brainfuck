@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require "brainfuck"
 require "readline"
 while line = Readline::readline(">>", [])  
@@ -8,6 +7,4 @@ while line = Readline::readline(">>", [])
   rescue => e  
     puts e  
   end  
-end  
-
-#"++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>."
+end

@@ -23,8 +23,6 @@ grammar Brainfuck
   rule dec
     '-' { def e(env); env.slots[env.pos] -= 1; end; }
   end
-  # Readline.readline[0];
-  # require 'readline';
   rule in
     ',' { def e(env); env.slots[env.pos] = env.get; end; }
   end  

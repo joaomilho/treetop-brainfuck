@@ -25,3 +25,11 @@ Text to brainfuck:
 Text to brainfuck to text again:
 
 ./txt2bf "foo bar baz" | ./runbrainfucke
+
+h2. Future plans
+
+Create ebf (embedded brainfuck), and create a revolutionary MVC web framework named "Brainfuck on Rails". Just kidding.
+
+h2. License
+
+You can use it, but you _have_ to say it's yours.

@@ -1,0 +1,34 @@
+grammar Brainfuck
+  rule program
+    cmd* { def run(env); elements.map{|el| el.e(env) }; end }
+  end
+  rule cmd
+    loop / op
+  end
+  rule loop
+    '[' c:cmd* ']' { def e(env); c.elements.map{ |i| i.e(env) } while env.slots[env.pos] != 0; end }
+  end
+  rule op
+    next / prev / inc / dec / in / out
+  end
+  rule next
+    '>' { def e(env); env.pos += 1; end; }
+  end
+  rule prev
+    '<' { def e(env); env.pos -= 1; end; }
+  end
+  rule inc
+    '+' { def e(env); env.slots[env.pos] += 1; end; }
+  end
+  rule dec
+    '-' { def e(env); env.slots[env.pos] -= 1; end; }
+  end
+  # Readline.readline[0];
+  # require 'readline';
+  rule in
+    ',' { def e(env); env.slots[env.pos] = env.get; end; }
+  end  
+  rule out
+    '.' { def e(env); print env.slots[env.pos].chr; end; }
+  end  
+end

@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require "brainfuck"
+require "readline"
+while line = Readline::readline(">>", [])  
+  begin  
+    Brainfuck::Interpreter.new(line.gsub(/\s+/,''))
+  rescue => e  
+    puts e  
+  end  
+end  
+
+#"++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>."

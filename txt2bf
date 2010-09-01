@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'txt2bf'
+puts ARGV[0].to_bf

@@ -1,4 +1,3 @@
 #!/usr/bin/env ruby
-require "brainfuck"
-Brainfuck::Interpreter.new(STDIN.gets.gsub(/\s+/,''))
-#"++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>."
+require 'brainfuck'
+Brainfuck::Interpreter.new(STDIN.gets)

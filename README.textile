@@ -4,7 +4,7 @@ It was made with Treetop. Alpha...
 
 h2. What's in it?
 
-Well, it has a 729 bytes brainfuck interpreter written in Ruby with Treetop. Kinda large, but better than most other ruby brainfuck interpreters, but the most important, it is _extremelly_ easy to understand if you're learning TreeTop.
+Well, it has a 774 bytes brainfuck interpreter written in Ruby with Treetop. Kinda large, but better than most other ruby brainfuck interpreters, but the most important, it is _extremelly_ easy to understand if you're learning TreeTop.
 
 It also has as string to brainfuck converter.
 

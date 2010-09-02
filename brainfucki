@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
-require "brainfuck"
-require "readline"
+require 'brainfuck'
+require 'readline'
 while line = Readline::readline(">>", [])  
   begin  
-    Brainfuck::Interpreter.new(line.gsub(/\s+/,''))
+    Brainfuck::Interpreter.new(line)
   rescue => e  
     puts e  
   end  

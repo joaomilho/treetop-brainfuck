@@ -28,9 +28,18 @@ Text to brainfuck to text again:
 
 h2. About the code
 
-abc.bf prints a...z
-add.bf receives two numbers and add 'em, but only if the sum is 9 or lower
-cba.bf prints z...a
+|abc.bf|Prints a...z|
+|add.bf|Receives two numbers and add 'em, but only if the sum is 9 or lower|
+|c.bf|Compiles something to C (the language). but i donnow :D|
+|cba.bf|Prints z...a|
+|cond.bf|Receives a lowercase char and prints it uppercase. If you type ENTER it exists. It's a good example of conditional logic|
+|div.bf|Receives two numbers and divide the first by the second.|
+|fac.bf|Ha ha ha.|
+|hello_world.bf|Hello World!|
+|int.bf|A brainfuck interpreted... Written. In. Brainfuck.|
+|mult.bf|Receives two numbers and multiply 'em.|
+|sqr.bf|Square roots!|
+
 
 h2. Future plans
 

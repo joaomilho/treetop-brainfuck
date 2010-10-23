@@ -26,6 +26,12 @@ Text to brainfuck to text again:
 
 ./txt2bf "foo bar baz" | ./runbrainfucke
 
+h2. About the code
+
+abc.bf prints a...z
+add.bf receives two numbers and add 'em, but only if the sum is 9 or lower
+cba.bf prints z...a
+
 h2. Future plans
 
 Create ebf (embedded brainfuck), and create a revolutionary MVC web framework named "Brainfuck on Rails". Just kidding.

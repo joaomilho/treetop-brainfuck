@@ -12,19 +12,27 @@ h2. Usage
 
 Running a brainfuck file:
 
+<code>
 ./runbrainfuck code/hello_world.bf
+</code>
 
 Piping:
 
+<code>
 cat code/hello_world.bf | ./runbrainfucke
+</code>
 
 Text to brainfuck:
 
+<code>
 ./txt2bf "foo bar baz"
+</code>
 
 Text to brainfuck to text again:
 
+<code>
 ./txt2bf "foo bar baz" | ./runbrainfucke
+</code>
 
 h2. About the code
 

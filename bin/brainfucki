@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'brainfuck'
+require_relative '../lib/brainfuck'
 require 'readline'
 while line = Readline::readline(">>", [])  
   begin  

@@ -1,33 +1,60 @@
 grammar Brainfuck
+
   rule program
-    cmd* { require 'ostruct'; def run; e = OpenStruct.new :s => [0]*3000, :p => 0; elements.map{|el| el.r(e) } end }
+    op* {
+      def run
+        state = OpenStruct.new slots: [0]*3000, position: 0
+        elements.map{|op| op.exec(state) }
+      end
+    }
   end
-  rule cmd
-    loop / op
-  end
-  rule loop
-    '[' c:cmd* ']' { def r(e) c.elements.map{ |i| i.r(e) } while e.s[e.p] != 0 end }
-  end
+
   rule op
-    next / prev / inc / dec / in / out
+    loop / next / prev / inc / dec / in / out
   end
+
+  rule loop
+    '[' ops:op* ']' {
+      def exec(state)
+        ops.elements.map{|op| op.exec(state) } while state.slots[state.position] != 0
+      end
+    }
+  end
+
   rule next
-    '>' { def r(e) e.p += 1 end }
+    '>' { def exec(state) state.position += 1 end }
   end
+
   rule prev
-    '<' { def r(e) e.p -= 1 end }
+    '<' { def exec(state) state.position -= 1 end }
   end
+
   rule inc
-    '+' { def r(e) e.s[e.p] += 1 end }
+    '+' { def exec(state) state.slots[state.position] += 1 end }
   end
+
   rule dec
-    '-' { def r(e) e.s[e.p] -= 1 end }
+    '-' { def exec(state) state.slots[state.position] -= 1 end }
   end
+
   rule in
-    ',' { def r(e) e.s[e.p] = get end
-          def get; `stty raw -echo`; r = STDIN.getc; `stty -raw echo`; r end }
-  end  
+    ',' {
+      def exec(state)
+        state.slots[state.position] = get
+      end
+      
+      def get
+        `stty raw -echo`; r = STDIN.getc; `stty -raw echo`
+        r
+      end
+    }
+  end
+
   rule out
-    '.' { def r(e) print e.s[e.p].chr end }
-  end  
+    '.' { 
+      def exec(state)
+        print state.slots[state.position].chr
+      end
+    }
+  end
 end

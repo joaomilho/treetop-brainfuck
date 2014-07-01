@@ -7,7 +7,7 @@ module Brainfuck
   class Interpreter
 
     def initialize(code)
-      code.gsub!(/\s+/,'')
+      code = code.gsub(/\s+/,'')
       BrainfuckParser.new.parse(code).run
     end
 
